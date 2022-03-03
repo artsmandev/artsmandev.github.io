@@ -4,10 +4,10 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
-subtitle:
-description:
-author: John Doe
+title: ⌜A R T S M A N . D E V⌟
+subtitle: I'M <b>⌞BRUNO ANDRADE⌝</b>, HERE I SHARE STUFF LIKE IDEAS, STUDIES, ETC AS A FUTURE QUERY SOURCE TO MYSELF<br/><i>MAYBE IT CAN HELP YOU TOO</i>
+description: As a Software Engineer, I help companies apply best practices, tests and turn "it just works" into a "high-quality" codebase by delivering fewer bugs, building maintainable and reliable software through my lovely Java
+author: Bruno Andrade
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
 date_format: '%Y-%m-%d'
@@ -79,7 +79,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+keywords: "Java, Software Engineer, Development, Programmer, Tips, Hacks, Open Software, GNU/Linux"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
