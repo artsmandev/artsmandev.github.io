@@ -92,7 +92,7 @@ I'm not against records or Lombok.<br>
 I'm against bad pattern we bring to codebase when put all these things together.
 We need to use them _wisely_.<br>
 
-Thing about the Domain we're creating, understand?<br>
+Think about the Domain we're creating, understand?<br>
 A good _class design prevent us vulnerabilities for bugs_.<br>
 Don't be blinded about no boilerplate, function programming, immutability, records everywhere.<br>
 Use the language's APIs as it's designed to be used.
