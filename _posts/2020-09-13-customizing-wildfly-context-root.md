@@ -8,14 +8,14 @@ tags: WildFly
 
 Developing for Java Web default context path is generated from artifact's name without your extension.
 
-For example, if `artsmanBlog.war` is an artifact, the context path will be `artsmanBlog`:<br/>
+For example, if `artsmanBlog.war` is an artifact, the context path will be `artsmanBlog`:
 >http://localhost:8080/`artsmanBlog`
 
-Working with Wildfly 20.0.1.Final, change the context path is easy:<br/>
+Working with Wildfly 20.0.1.Final, change the context path is easy:
 
-1. Create a xml file named `jboss-web.xml`
-2. Put it inside of the WEB-INF<br/>
-3. Define the new context path inside `context-root` tag<br/>
+1. Create a xml file named `jboss-web.xml`.
+2. Put it inside of the WEB-INF.
+3. Define the new context path inside `context-root` tag.
 
 Like below:
 
@@ -30,7 +30,7 @@ Like below:
 </jboss-web>
 ```
 
-Now, the context path will be `myCustomContextRoot`:<br/>
+Now, the context path will be `myCustomContextRoot`:
 >http://localhost:8080/`myCustomContextRoot`
 
 *xoff*.

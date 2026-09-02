@@ -4,25 +4,25 @@ description: Keep team using same version can be a challenge, but I bring an eas
 tags: [Gradle, Java, JDK, Build, Pipeline]
 ---
 
-Last week a fried of mine faced a very special problem with a build in CI/CD pipeline.<br>
-In its Dockerfile, he wasn't setting a specific JDK version.<br>
-This reponsibility was so, automatically, transfered to the image `eclipse-temurin:21`.<br>
+Last week a fried of mine faced a very special problem with a build in CI/CD pipeline.
+In its Dockerfile, he wasn't setting a specific JDK version.
+This reponsibility was so, automatically, transfered to the image `eclipse-temurin:21`.
 He was using version 21.0.**9** then image updated to 21.0.**10** and bang... build started to fail.
 
 A some time I wanted to write about similar thing:
 > How could we keep same JDK version when working in a team?
 
 Is very easy to us, while working in a team, have different versions, e.g.:
-1. In our local `JAVA_HOME`
-2. In our IDE
-3. In CI/CD
-4. And so on
+1. In our local `JAVA_HOME`.
+2. In our IDE.
+3. In CI/CD.
+4. And so on.
 
 And indepently which JDK version manager you're using:
-1. manually _(i was this guy a long time a go)_
-2. sdkman _(today is my favorite)_
-3. jenv
-4. etc
+1. manually _(i was this guy a long time a go)_.
+2. sdkman _(today is my favorite)_.
+3. jenv.
+4. etc.
 
 It's very simple:
 1. We create a file in root project that containing a version, e.g. `.java-version`:
@@ -81,13 +81,13 @@ Execution failed for task ':checkJavaVersion'.
 BUILD FAILED in 974ms
 1 actionable task: 1 executed
 ```
-That's it.<br>
+That's it.
 Everywhere your project is on, it'll always be running on same version and be consistent.
 
-That care with your versions.<br>
-When updating, even in case its a "low importance".<br>
-Like the example, it was just "21.0.**9** to 21.**10**", it can result in fail on your end.<br>
-Take a moment to read the _release notes_.<br>
-Remember: if you don't assume the responsibility about your version, your code... someone will do it.<br>
+That care with your versions.
+When updating, even in case its a "low importance".
+Like the example, it was just "21.0.**9** to 21.**10**", it can result in fail on your end.
+Take a moment to read the _release notes_.
+Remember: if you don't assume the responsibility about your version, your code... someone will do it.
 
 _xoff_.

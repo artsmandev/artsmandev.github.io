@@ -11,11 +11,9 @@ tags:
 package dev.artsman.blog.post;
 
 class First {
-
   public static void main(String[] args) {
     new Post("Hello World, 🤪.").publish();
   }
-
 }
 
 class Post {
@@ -28,7 +26,7 @@ class Post {
   void publish() {
     System.out.println(this.content);
   }
-
 }
 ```
-*eof.*
+
+*xoff*.

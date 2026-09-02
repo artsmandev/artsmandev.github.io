@@ -4,9 +4,9 @@ description: Constants without going to interface or utility class(private const
 tags: [Java, Enum]
 ---
 
-Hey yo,<br>
-I'm not a big fan of constants.<br>
-It's true in all project I've worked... they always comes in.<br>
+Hey yo,
+I'm not a big fan of constants.
+It's true in all project I've worked... they always comes in.
 But it isn't because I don't like, I can't bring new approaches to it, right?
 
 Let's say we've these fields to be shared as _constants_:
@@ -18,7 +18,7 @@ Let's say we've these fields to be shared as _constants_:
 
 The more common ways to make it as constants are:
 
-1. Creating an **Interface**, e.g.:<br>
+1. Creating an **Interface**, e.g.:
 ```java
 interface Constant {
   String PROVIDER = "SomeProvider";
@@ -68,13 +68,13 @@ enum Constant {;
 }
 ```
 
-No _Interface_.<br>
-No _Utility Class_(final class, private constructor, static things).<br>
+No _Interface_.
+No _Utility Class_(final class, private constructor, static things).
 
-Just _Enum_.<br>
-Simple, concise and objective.<br>
+Just _Enum_.
+Simple, concise and objective.
 
-Another post, another real life scenario.<br>
-See ya!<br>
+Another post, another real life scenario.
+See ya!
 
 _xoff_.

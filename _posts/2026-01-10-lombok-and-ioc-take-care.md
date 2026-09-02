@@ -4,10 +4,10 @@ description: Don't get influenced by Lombok's hidden things, keep strong on basi
 tags: [Inversion of Control, Dependency Injection, Lombok]
 ---
 
-Happy new year _++2025_, fellows! 🎊<br>
+Happy new year _++2025_, fellows! 🎊
 
-Another real world `lombok's` adventure.<br>
-Today, I'm going to show a pice of how combine Lombok and IoC principle can be trick.<br>
+Another real world `lombok's` adventure.
+Today, I'm going to show a pice of how combine Lombok and IoC principle can be trick.
 
 Let's look at this piece of code below:
 ```java
@@ -23,10 +23,10 @@ public class OrderController {
 }
 ```
 
-At first, it's a fancy code, right?<br>
-We're injecting `orderService`, `pollingIntervalInSeconds` and `timeoutInSeconds` successully.<br>
-What's the point here? _(you probably will be wondering by now)_<br>
-I would say:<br>
+At first, it's a fancy code, right?
+We're injecting `orderService`, `pollingIntervalInSeconds` and `timeoutInSeconds` successully.
+What's the point here? _(you probably will be wondering by now)_
+I would say:
 > _"Out of sight, out of mind"_
 
 In reality, that will result this:
@@ -98,19 +98,18 @@ The best approach would be:
       }
     }
 ```
-
 At least you've a good reason to split the instantiation, always centralize it in one way.
 
 It'll give you a clear, objective and fast feedback like:
 1. Where you're injecting the deps.
 2. Which deps your class depends on.
-3. 🧪 You'll be happy when testing (do you test, right?)!
+3. 🧪 You'll be happy when testing! (do you test, right?)
 
-Isn't so difficult to right clean, simple and objective code.\
-What make you a better developer is keep eye on the details.\
-Don't use reflection without an explicity reason.\
-It's expensive, it brake encapsulation principle in OOP.\
-Don't just ctrl + c and ctrl + v.\
+Isn't so difficult to right clean, simple and objective code.
+What make you a better developer is keep eye on the details.
+Don't use reflection without an explicity reason.
+It's expensive, it brake encapsulation principle in OOP.
+Don't just ctrl + c and ctrl + v.
 Don't get blinded from lombok hidden stuffs from you.
 
 

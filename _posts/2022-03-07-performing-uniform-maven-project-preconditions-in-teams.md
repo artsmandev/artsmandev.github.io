@@ -6,36 +6,35 @@ tags: [Maven Enforcer Plugin]
 
 Guys,
 
-In this post, I will share a bit about amazing things we can do using Maven.<br/>
-There are good plugins in Maven that we rarely hear about it. Sad.<br/>
+In this post, I will share a bit about amazing things we can do using Maven.
+There are good plugins in Maven that we rarely hear about it. Sad.
 `Maven Enforcer Plugin` is one of them.
 
-Well,<br/>
-Working with Maven we deal with many configs, plugins, dependencies, and your versions.<br/>
+Well,
+Working with Maven we deal with many configs, plugins, dependencies, and your versions.
 Doing the management of it, sometimes, can make your head hurt.
 
-We can work alone, or, we can work in a team.<br/>
-And people are incredibly stunning, each one with your own style.<br/>
+We can work alone, or, we can work in a team.
+And people are incredibly stunning, each one with your own style.
 When I say style, it's in a full context(IDE, numbers of space in tabs(2 of 4?, =D), versions of software, and so on).
 
 Let's begin with the more simple one.
 
-Everybody knows that Java is free, open-source, etc.<br/>
-We can download it, create a program, make it works,  lunch that in Production.... huh... Nah!<br/>
-But, maybe, you could forget that Oracle JDK it's not allowed to be put in Production without a license - yeah.<br/>
+Everybody knows that Java is free, open-source, etc.
+We can download it, create a program, make it works,  lunch that in Production.... huh... Nah!
+But, maybe, you could forget that Oracle JDK it's not allowed to be put in Production without a license - yeah.
 Now, imagine, a member of your team, using that one to compile, create an artifact, and push it to Nexus, running pipeline and `Voilà` it's there on Production, and we have a huge problem now.
 
->Note: I know there's OpenJDK version, but, that's not the point, OK?<br/>
+>Note: I know there's OpenJDK version, but, that's not the point, OK?
 >Thanks for understanding, kisses/hugs, and going on. (=
 
-
-Let's imagine we are working on a team using only __AWS stack__.<br/>
-At that moment, after talking with a team, we've decided to use __only__ __Amazon Vendor JDK Corretto__.<br/>
+Let's imagine we are working on a team using only __AWS stack__.
+At that moment, after talking with a team, we've decided to use __only__ __Amazon Vendor JDK Corretto__.
 Only just for better compatibility and, you know, it has improvements performing to the cloud.
 
 How can we ensure those two points:
-1. Do not put Oracle JDK binaries without license in Production
-2. Only use the vendor-specific to our architecture
+1. Do not put Oracle JDK binaries without license in Production.
+2. Only use the vendor-specific to our architecture.
 
 Using `Maven Enforcer Plugin`!
 
@@ -100,8 +99,8 @@ Oracle Corporation
 jshell> /exit
 |  Goodbye
 ```
-
 Oh, you notice? JShell said bye to me. Oh, my lovely Java. So polite. <3
+{: .post-caption}
 
 When I try to compile, or, use any other Maven phase, it will fail like that:
 
@@ -126,12 +125,12 @@ Oracle Corporation is not an included Required Java Vendor
 [INFO] ------------------------------------------------------------------------
 ```
 
-The interesting in here is, that constraint verification runs at the first goal in Maven Lifecycle: validation.<br/>
+The interesting in here is, that constraint verification runs at the first goal in Maven Lifecycle: validation.
 That's super cool, isn't it?
 
 __Bonus__... we can do more!
 
-Imagine there's already a Maven version __3.9__ and __you want force that specific one__.<br/>
+Imagine there's already a Maven version __3.9__ and __you want force that specific one__.
 Mine's completely wrong at this momento, right?
 
 ```shell
@@ -165,7 +164,7 @@ __Also__ you can __specify the Java Version__ ignoring the vendor at this moment
 openjdk 17.0.2 2022-01-18
 ```
 
-But, for now, i want only be able to use Java 11.<br/>
+But, for now, i want only be able to use Java 11.
 Running Maven:
 ```shell
 ❯ mvn compile                            
@@ -193,9 +192,9 @@ Detected JDK Version: 17.0.2 is not in the allowed range [11,11].
 There are more cooll stuffs.
 
 But, in my opinion, that three constraints are the essentials:
-1. Maven version
-2. JDK vendor
-3. JDK version
+1. Maven version.
+2. JDK vendor.
+3. JDK version.
 
 That's all for today.
 
