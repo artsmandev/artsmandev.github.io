@@ -24,13 +24,19 @@ ul {
   margin-top: 0;
 }
 
-// Tight spacing before quotes.
+// A paragraph that ends right before a quote keeps tight spacing (<br>-like).
+// When the author intends a separated gap (like a paragraph), add the
+// .quote-separated class to the blockquote to open the spacing.
 p:has(+ blockquote) {
   margin-bottom: 0;
 }
 
 blockquote {
   margin-top: 0;
+}
+
+blockquote.quote-separated {
+  margin-top: 25px;
 }
 
 // Lists and blockquotes are text, so 25px matches paragraph spacing.
@@ -40,18 +46,55 @@ blockquote:has(+ p) {
   margin-bottom: 25px;
 }
 
-// Centered annotation/caption shown right below a code block (a "P.S.").
-.post-body .post-caption {
-  margin: 0 auto 25px;
+// A separated quote reads tightly with the paragraph that follows it.
+blockquote.quote-separated:has(+ p) {
+  margin-bottom: 0;
+}
+
+// The inner paragraph's bottom margin would otherwise collapse through the
+// quote (no bottom padding/border) and recreate a 25px gap, so zero it out.
+blockquote.quote-separated > p:last-child {
+  margin-bottom: 0;
+}
+
+// Annotation/caption shown right below a code block (a "P.S.").
+// Left-aligned to reinforce its connection to the code block above it.
+// Standalone and list-item captions share the same look.
+.post-body .post-caption,
+.post-body li .highlighter-rouge + p:last-child {
   max-width: 80%;
-  text-align: center;
-  font-size: $font-size-small;
+  text-align: left;
+  font-size: 13px;
   color: $grey-dim;
   font-style: italic;
   line-height: 1.4;
 }
 
-// Pull the caption close to the code block above it (caption-hug).
+// Standalone captions: paragraph-spaced below, then tugged up against the
+// code block above (caption-hug).
+.post-body .post-caption {
+  margin: 0 0 25px;
+}
 .post-body .highlighter-rouge + .post-caption {
   margin-top: -32px;
+}
+
+// Consecutive captions sit tight together (like a <br> break).
+.post-body .post-caption:has(+ .post-caption) {
+  margin-bottom: 0;
+}
+
+// List captions: pulled close to the code block, tight to what follows.
+.post-body li .highlighter-rouge + p:last-child {
+  margin: -32px 0 25px;
+}
+
+// Visible marker signaling the caption belongs to the code block above.
+.post-body .post-caption::before,
+.post-body li .highlighter-rouge + p:last-child::before {
+  content: "P.S.: ";
+  font-style: normal;
+  font-weight: bold;
+  font-size: $font-size-base;
+  color: $black-deep;
 }
