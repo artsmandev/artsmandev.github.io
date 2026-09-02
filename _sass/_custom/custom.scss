@@ -1,1 +1,57 @@
-// Custom styles.
+// Tight spacing before code blocks.
+p:has(+ .highlighter-rouge) {
+  margin-bottom: 0;
+}
+
+.highlighter-rouge > .highlight {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Normal paragraph-like spacing after code blocks.
+.highlighter-rouge {
+  margin-bottom: 32px;
+}
+
+// Tight spacing before lists.
+p:has(+ ol),
+p:has(+ ul) {
+  margin-bottom: 0;
+}
+
+ol,
+ul {
+  margin-top: 0;
+}
+
+// Tight spacing before quotes.
+p:has(+ blockquote) {
+  margin-bottom: 0;
+}
+
+blockquote {
+  margin-top: 0;
+}
+
+// Lists and blockquotes are text, so 25px matches paragraph spacing.
+ol:has(+ p),
+ul:has(+ p),
+blockquote:has(+ p) {
+  margin-bottom: 25px;
+}
+
+// Centered annotation/caption shown right below a code block (a "P.S.").
+.post-body .post-caption {
+  margin: 0 auto 25px;
+  max-width: 80%;
+  text-align: center;
+  font-size: $font-size-small;
+  color: $grey-dim;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+// Pull the caption close to the code block above it (caption-hug).
+.post-body .highlighter-rouge + .post-caption {
+  margin-top: -32px;
+}
